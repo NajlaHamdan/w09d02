@@ -3,7 +3,7 @@ import {composeWithDevTools} from "redux-devtools-extention";
 
 import signIn from "./login";
 
-const reducers=combineReducers({signIn});
+const reducers=combineReducers({signIn,tasks});
 
 const store=()=>{
     return createStore(reducers,composeWithDevTools());

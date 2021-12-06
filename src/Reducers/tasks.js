@@ -1,1 +1,3 @@
-
+const initialState={
+    tasks:null,
+}
