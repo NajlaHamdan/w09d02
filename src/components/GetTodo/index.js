@@ -12,7 +12,9 @@ const GetTodo = () => {
       let id = localStorage.getItem("id");
       const token = localStorage.getItem("user");
       console.log(token);
-      const result = await axios.get(`http://localhost:4000/getTodo/${id}`);
+      const result = await axios.get(`http://localhost:4000/getTodo/${id}`,{
+        headers: { Authorization: `Brearer ${token}` },
+      });
       console.log(result.data);
       if (result.data === "no todos for this user") {
         setTodo([]);
