@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router";
+import { useSelector } from "react-redux";
 import GetTodo from "../GetTodo";
 // const BASE_URL = "http://localhost:4000";
 
@@ -16,8 +17,17 @@ const Login = () => {
     setToken(token);
     setId(id);
   }, []);
+
+  const state= useSelector((state)=>{
+    return {
+      signIn:state.signIn.token,
+      tasks:state.tasks,
+    }
+  })
+  console.log(state.signIn);
   const logIn = (e) => {
-    e.preventDefault();
+    try{
+      e.preventDefault();
     axios
       .post(`${process.env.REACT_APP_BASE_URL}/login`, {
         email: e.target.email.value,
@@ -39,6 +49,9 @@ const Login = () => {
       .catch((err) => {
         console.log(err);
       });
+    }catch(err){
+      console.log(err);
+    }
   };
   return (
     <div>

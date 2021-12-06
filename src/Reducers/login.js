@@ -20,13 +20,13 @@ export default signIn;
 
 export const login=(data)=>{
     return{
-        type="LOGIN",
+        type:"LOGIN",
         payload:data
     }
 }
 export const logout=(data)=>{
     return{
-        type="LOGOUT",
+        type:"LOGOUT",
         payload:data
     }
 }

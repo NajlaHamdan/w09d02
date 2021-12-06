@@ -3,7 +3,7 @@ import './App.css';
 import {Routes,Route} from "react-router-dom"
 import Logout from "./components/Logout";
 import GetTodo from "./components/GetTodo";
-import Login from "./components/GetTodo";
+import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import Admin from "./components/Admin";
 function App() {
@@ -13,7 +13,7 @@ function App() {
        <Routes>
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/getTodo" element={<GetTodo />} />
-        <Route exact path="/signup" element={<SignUp />} />
+        <Route exact path="/" element={<SignUp />} />
         <Route exact path="/admin" element={<Admin />} />
       </Routes>
     </div>
